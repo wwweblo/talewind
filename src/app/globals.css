@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Кастомный синий и скругленный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px; /* Тонкий */
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #e0f2fe; /* Светло-голубой фон */
+    border-radius: 10px; /* Скругление */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3b82f6; /* Синий */
+    border-radius: 10px; /* Скругление */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #1e40af; /* Темно-синий при наведении */
+  }
+  
