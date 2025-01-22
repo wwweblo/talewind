@@ -4,6 +4,7 @@ import Dropdown from "@/components/dropdows";
 import CustomCalendar from "@/components/CustomCalendar";
 import { CheckBoxGroup } from "@/components/CheckBox";
 import { RadioButtonGroup } from "@/components/RadioButton";
+import { NotificationsContainer } from "@/components/Notification";
 export default function Home() {
 
   const groupOptions = [
@@ -44,6 +45,24 @@ export default function Home() {
     { label: "Значение 4", checked: false, disabled: true },
   ];
 
+  const notifications = [
+    {
+      type: "error",
+      title: "Что-то пошло не так",
+      message: "Мы уже работаем над устранением проблемы",
+    },
+    {
+      type: "success",
+      title: "Всё получилось!",
+      message: "<Действие> успешно выполнено",
+    },
+    {
+      type: "info",
+      title: "Уведомление об оценивании",
+      message: "Пожалуйста, обратите внимание",
+    },
+  ];
+
 
 return (
   <div>
@@ -62,6 +81,8 @@ return (
 
     <CheckBoxGroup items={checkBoxItems} />
     <RadioButtonGroup items={radioButtonItems} />
+
+    <NotificationsContainer notifications={notifications} />
 
   </div>
   );
