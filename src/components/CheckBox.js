@@ -42,7 +42,7 @@ export const CheckBoxGroup = ({ items }) => {
   };
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex m-5 flex-col space-y-2">
       {items.map((item, index) => (
         <CheckBox
           key={index}

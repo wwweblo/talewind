@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Компоненты 
 
-## Getting Started
+### Button
 
-First, run the development server:
+**Пример использования**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```js
+<Button text="button" variant="light_blue" size="md"/>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### variantStyles
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Стиль кнопки зависит от передаваемого значения `style` его возможные значения и изобажения привыедены в таблице
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+|Стиль|Изображение|
+|---|---|
+|light_blue| ![светло-голубая кнопка](public\light_blue_button.png)|
+|blue|![голубая кнопка](public\blue_button.png)|
+|gray|![серая кнопка](public\gray_button.png)|
 
-## Learn More
+#### size
 
-To learn more about Next.js, take a look at the following resources:
+Размер зависит от передаваемого параметра `size` его значения и влияние значения на размет изображены ниже
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![размеры кнопок](public\size_button.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ #### CheckBoxGroup
 
-## Deploy on Vercel
+ Создание группы `imput` с возможностью выбора нескольких элементов. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ **Пример использования**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ ```js
+   const checkBoxItems = [
+    { label: "Значение 1", checked: false, disabled: false },
+    { label: "Значение 2", checked: true, disabled: false },
+    { label: "Значение 3", checked: false, disabled: true },
+    { label: "Значение 4", checked: true, disabled: true },
+  ];
+
+  return (
+  <div>
+
+    <CheckBoxGroup items={checkBoxItems} />
+
+  </div>
+  );
+
+ ```
+
+ ![группа импутов](public\CheckBoxGroup.png)
+
+
+ ### CustomCalendar
+
+ Компонент выбора даты из предложенных вариантов
+
+ |тип|изображение|
+ |---|---|
+ |date|![календарь с выбором даты](public\custom_calendar_date.png)| 
+ |month|![календарь с выбором месяца](public\custom_calendar_month.png)|
+
+ ### dropdown
+
+ выбор одного варианта из нескольких предложенных
+
+```js
+const groupOptions = [
+    "ПР-XX.XXX",
+    "ПР-XX.XXX",
+    "ПР-XX.XXX",
+    "ПР-XX.XXX",
+    "ПР-XX.XXX",
+    "ПР-XX.XXX",
+  ];
+
+return (
+  <div className="m-5" >
+
+    <Dropdown options={groupOptions} />
+
+  </div>
+  );
+```
+
+
+![раскрывающееся меню](public\dropdown.png)

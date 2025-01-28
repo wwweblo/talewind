@@ -7,27 +7,25 @@ const sizeStyles = {
 };
 
 const variantStyles = {
-  light_blue: "bg-blue-500 text-white m-100 hover:bg-blue-600",
+  light_blue: "bg-blue-500 text-white hover:bg-blue-600",
   blue: "bg-blue-700 text-white hover:bg-blue-900",
-  gray: "bg-gray-500 text-white hover:bg-gray-600"
+  gray: "bg-gray-500 text-white hover:bg-gray-600",
 };
 
-const Button = ({ text, variant = "light_blue", size = "md", onClick, imageSrc, altText }) =>
-  React.createElement(
-    "button",
-    {
-      className: `font-thin rounded-lg transition duration-300 flex items-center ${sizeStyles[size]} ${variantStyles[variant]}`,
-      onClick,
-    },
-    text,
-    imageSrc && React.createElement(
-      "img",
-      {
-        src: imageSrc,
-        alt: altText,
-        className: "ml-2",
-      }
-    )
-  );
+const Button = ({ text, variant = "light_blue", size = "md", callback, imageSrc, altText }) => (
+  <button
+    className={`font-thin m-5 rounded-lg transition duration-300 flex items-center justify-center ${sizeStyles[size]} ${variantStyles[variant]}`}
+    onClick={callback}
+  >
+    {text}
+    {imageSrc && (
+      <img
+        src={imageSrc}
+        alt={altText}
+        className="ml-2"
+      />
+    )}
+  </button>
+);
 
 export default Button;

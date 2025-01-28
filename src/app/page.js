@@ -65,24 +65,11 @@ export default function Home() {
 
 
 return (
-  <div>
-    <Button text="button" variant="light_blue" size="md"/>
-    <PasswordInput/>
+  <div className="m-5" >
 
     <Dropdown options={groupOptions} />
 
 
-    {/* Компонент для выбора даты */}
-    <CustomCalendar type="date" availableDates={availableDates} style="white" />
-
-    {/* Компонент для выбора месяца */}
-    <CustomCalendar type="month" style="blue" />
-
-
-    <CheckBoxGroup items={checkBoxItems} />
-    <RadioButtonGroup items={radioButtonItems} />
-
-    <NotificationsContainer notifications={notifications} />
 
   </div>
   );
